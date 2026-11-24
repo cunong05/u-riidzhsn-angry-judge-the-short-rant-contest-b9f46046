@@ -10,6 +10,8 @@ ENTRY = "Someone replied-all to a 400-person email with just 'Thanks!' Now 47 st
 
 
 def main():
+    # The contest entry must stay exactly 302 characters, byte-identical.
+    assert len(ENTRY) == 302, f"entry must be 302 chars, got {len(ENTRY)}"
     out_dir = "/output"
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
